@@ -197,8 +197,8 @@ sudo tee /etc/docker/daemon.json << EOF
     "max-file": "3"
   },
   "registry-mirrors": [	
-    "https://registry.cn-hangzhou.aliyuncs.com",     
-    "https://docker.mirrors.ustc.edu.cn"
+    "https://naljryvl.mirror.aliyuncs.com",      
+    "https://docker.nju.edu.cn"
   ]
 }
 EOF
@@ -209,6 +209,7 @@ sudo systemctl restart docker
 sudo systemctl enable docker
 
 ## 6、测试docker是否安装成功
+docker pull hello-world;
 docker run hello-world;
 ```
 
@@ -221,7 +222,17 @@ docker run hello-world;
 + /etc 目录的作用：
     - 配置文件专用目录，系统和服务的主要配置文件都放这里
     - Docker 默认会到 /etc/docker/daemon.json 寻找配置
-+ registry-mirrors：配置国内镜像源，加速
++ registry-mirrors：配置国内镜像加速器，
+  - https://naljryvl.mirror.aliyuncs.com 是阿里云服务的加速器，对阿里云服务有效
+  - 如果 docker pull hello-world 无法拉取镜像，记得检查 DNS 解析
+    ```text
+    > cat /etc/resolv.conf
+
+    nameserver 8.8.8.8
+    nameserver 114.114.114.114
+    nameserver 223.5.5.5
+    nameserver 127.0.0.53
+    ```
 
 ### 3.3 docker 常用命令
 使用 `docker --help` 查看 docker 命令，可分为如下几类操作：
