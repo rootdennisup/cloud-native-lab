@@ -4,6 +4,6 @@
 - A--Docker
 - B--Kubernetes
 - C--实践进阶
-- D--CI/CD、运维监控等
+- D--DevOps
 - E--服务网格
 - F--故障排除指南
