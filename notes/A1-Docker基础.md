@@ -250,6 +250,6 @@ docker run hello-world;
 
 ## 参考资料
 + [Docker 官方文档](https://docs.docker.com/)
-+ [Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/)
++ [Docker — 从入门到实践](https://vuepress.mirror.docker-practice.com/)
 
 
